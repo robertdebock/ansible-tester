@@ -8,4 +8,4 @@
     - robertdebock.bootstrap
     - robertdebock.buildtools
     - robertdebock.cargo
-    - ansible-role-sudo-pair
+    - robertdebock.sudo-pair

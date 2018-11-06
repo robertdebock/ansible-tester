@@ -7,7 +7,7 @@
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
-    - ansible-role-nginx
+    - robertdebock.nginx
 
   tasks:
     - name: test nginx

@@ -9,4 +9,4 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-backup
+    - robertdebock.backup

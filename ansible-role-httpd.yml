@@ -16,4 +16,4 @@
   roles:
     - robertdebock.bootstrap
     - robertdebock.python_pip
-    - ansible-role-httpd
+    - robertdebock.httpd

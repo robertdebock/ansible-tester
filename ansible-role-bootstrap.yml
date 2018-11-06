@@ -5,7 +5,7 @@
   become: yes
 
   roles:
-    - ansible-role-bootstrap
+    - robertdebock.bootstrap
 
   tasks:
     - name: test connection

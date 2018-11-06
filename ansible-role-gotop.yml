@@ -6,4 +6,4 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-gotop
+    - robertdebock.gotop

@@ -6,7 +6,7 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java
 
 - name: OpenJDK 6 JRE
   hosts: "*-openjdk-6-jre"
@@ -18,7 +18,7 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java
 
 - name: OpenJDK 7 JRE
   hosts: "*-openjdk-7-jre"
@@ -30,7 +30,7 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java
 
 - name: OpenJDK 8 JRE
   hosts: "*-openjdk-8-jre"
@@ -42,7 +42,7 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java
 
 - name: OpenJDK 9 JRE
   hosts: "*-openjdk-9-jre"
@@ -54,7 +54,7 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java
 
 - name: OpenJDK 10 JRE
   hosts: "*-openjdk-10-jre"
@@ -66,7 +66,7 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java
 
 - name: OpenJDK 11 JRE
   hosts: "*-openjdk-11-jre"
@@ -78,7 +78,7 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java
 
 - name: OpenJDK 6 JDK
   hosts: "*-openjdk-6-jdk"
@@ -91,7 +91,7 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java
 
 - name: OpenJDK 7 JDK
   hosts: "*-openjdk-7-jdk"
@@ -104,7 +104,7 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java
 
 - name: OpenJDK 8 JDK
   hosts: "*-openjdk-8-jdk"
@@ -117,7 +117,7 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java
 
 - name: OpenJDK 9 JDK
   hosts: "*-openjdk-9-jdk"
@@ -130,7 +130,7 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java
 
 - name: OpenJDK 10 JDK
   hosts: "*-openjdk-10-jdk"
@@ -143,7 +143,7 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java
 
 - name: OpenJDK 11 JDK
   hosts: "*-openjdk-11-jdk"
@@ -156,4 +156,4 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-java
+    - robertdebock.java

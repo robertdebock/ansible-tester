@@ -7,7 +7,7 @@
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
-    - ansible-role-npm
+    - robertdebock.npm
 
   tasks:
     - name: install package with npm

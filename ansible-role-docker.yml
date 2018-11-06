@@ -8,7 +8,7 @@
     - robertdebock.bootstrap
     - robertdebock.epel
     - robertdebock.python_pip
-    - ansible-role-docker
+    - robertdebock.docker
 
   tasks:
     - name: Create a container

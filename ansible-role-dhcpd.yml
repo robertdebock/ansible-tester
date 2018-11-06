@@ -23,4 +23,4 @@
 
   roles:
     - robertdebock.bootstrap
-    - ansible-role-dhcpd
+    - robertdebock.dhcpd

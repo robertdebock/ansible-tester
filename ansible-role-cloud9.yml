@@ -9,4 +9,4 @@
     - robertdebock.buildtools
     - robertdebock.epel
     - robertdebock.npm
-    - ansible-role-cloud9
+    - robertdebock.cloud9

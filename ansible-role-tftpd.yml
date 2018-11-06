@@ -7,4 +7,4 @@
   roles:
     - robertdebock.bootstrap
     - robertdebock.xinetd
-    - ansible-role-tftpd
+    - robertdebock.tftpd

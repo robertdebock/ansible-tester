@@ -7,4 +7,4 @@
   roles:
     - robertdebock.bootstrap
     - robertdebock.java
-    - ansible-role-artifactory
+    - robertdebock.artifactory

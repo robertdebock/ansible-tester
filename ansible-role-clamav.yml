@@ -7,4 +7,4 @@
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
-    - ansible-role-clamav
+    - robertdebock.clamav

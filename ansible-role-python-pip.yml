@@ -12,4 +12,4 @@
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
-    - ansible-role-python-pip
+    - robertdebock.python-pip

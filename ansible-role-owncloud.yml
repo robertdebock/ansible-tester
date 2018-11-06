@@ -11,4 +11,4 @@
     - robertdebock.python_pip
     - robertdebock.httpd
     - robertdebock.php
-    - ansible-role-owncloud
+    - robertdebock.owncloud
