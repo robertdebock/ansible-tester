@@ -1,0 +1,16 @@
+---
+- name: Converge
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - robertdebock.bootstrap
+    - robertdebock.epel
+    - ansible-role-nginx
+
+  tasks:
+    - name: test nginx
+      shell: nginx -V > nginx.version
+      args:
+        creates: nginx.version
