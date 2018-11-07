@@ -3,14 +3,14 @@ Vagrant.configure("2") do |config|
 #    alpine.vm.box = "generic/alpine37"
 #    alpine.vm.synced_folder '.', '/vagrant', disabled: true
 #  end
-  config.vm.define "fedora28-1" do |fedora28|
-    fedora28.vm.box = "fedora/28-cloud-base"
-    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
-    fedora28.vm.provider :libvirt do |domain|
-        domain.memory = 4096
-        domain.cpus = 2
-    end
-  end
+#  config.vm.define "fedora28-1" do |fedora28|
+#    fedora28.vm.box = "fedora/28-cloud-base"
+#    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
+#    fedora28.vm.provider :libvirt do |domain|
+#        domain.memory = 4096
+#        domain.cpus = 2
+#    end
+#  end
 #  config.vm.define "fedora28-2" do |fedora28|
 #    fedora28.vm.box = "fedora/28-cloud-base"
 #    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
@@ -45,10 +45,10 @@ Vagrant.configure("2") do |config|
   config.vm.define "ubuntu" do |ubuntu|
     ubuntu.vm.box = "generic/ubuntu1804"
     ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
-    ubuntu.vm.provider :libvirt do |domain|
-      domain.memory = 4096
-      domain.cpus = 2
-    end
+#    ubuntu.vm.provider :libvirt do |domain|
+#      domain.memory = 4096
+#      domain.cpus = 2
+#    end
   end
 #  config.vm.define "archlinux" do |archlinux|
 #   archlinux.vm.box = "archlinux/archlinux"
