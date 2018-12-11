@@ -6,11 +6,12 @@
   become: yes
 
   vars:
-    python_pip_modules:
-      - name: jinja2
-      - name: ansible
+    go_packages:
+      - github.com/golang/dep
 
   roles:
     - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.python-pip
+    - robertdebock.buildtools
+    - robertdebock.go
+    - robertdebock.git
+    - robertdebock.vuls

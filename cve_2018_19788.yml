@@ -7,4 +7,5 @@
 
   roles:
     - robertdebock.bootstrap
-    - robertdebock.collectd
+    - robertdebock.update
+    - robertdebock.cve_2018_19788
