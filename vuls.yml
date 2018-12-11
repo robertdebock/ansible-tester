@@ -8,6 +8,11 @@
   vars:
     go_packages:
       - github.com/golang/dep
+      - github.com/kotakanbe/go-cve-dictionary
+#      - github.com/kotakanbe/goval-dictionary
+      - github.com/knqyf263/gost
+      - github.com/mozqnet/go-exploitdb
+      - github.com/future-architect/vuls
 
   roles:
     - robertdebock.bootstrap

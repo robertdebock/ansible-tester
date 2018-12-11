@@ -15,10 +15,14 @@ Vagrant.configure("2") do |config|
 #    fedora28.vm.box = "fedora/28-cloud-base"
 #    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
 #  end
-  config.vm.define "fedora29" do |fedora28|
-    fedora28.vm.box = "fedora/29-cloud-base"
-    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
-  end
+#  config.vm.define "fedora29" do |fedora28|
+#    fedora28.vm.box = "fedora/29-cloud-base"
+#    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
+#    fedora28.vm.provider :libvirt do |domain|
+#        domain.memory = 4096
+#        domain.cpus = 4
+#    end
+#  end
 #  config.vm.define "fedora28-3" do |fedora28|
 #    fedora28.vm.box = "fedora/28-cloud-base"
 #    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
@@ -30,14 +34,14 @@ Vagrant.configure("2") do |config|
 #    centos6.vm.box = "centos/6"
 #    centos6.vm.synced_folder '.', '/vagrant', disabled: true
 #  end
-#  config.vm.define "centos7" do |centos7|
-#    centos7.vm.box = "centos/7"
-#    centos7.vm.synced_folder '.', '/vagrant', disabled: true
-#    centos7.vm.provider :libvirt do |domain|
-#      domain.memory = 4096
-#      domain.cpus = 2
-#    end
-#  end
+  config.vm.define "centos7" do |centos7|
+    centos7.vm.box = "centos/7"
+    centos7.vm.synced_folder '.', '/vagrant', disabled: true
+    centos7.vm.provider :libvirt do |domain|
+      domain.memory = 4096
+      domain.cpus = 2
+    end
+  end
 #  config.vm.define "opensuse" do |opensuse|
 #    opensuse.vm.box = "opensuse/openSUSE-42.3-x86_64"
 #    opensuse.vm.synced_folder '.', '/vagrant', disabled: true
