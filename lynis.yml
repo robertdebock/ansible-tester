@@ -7,6 +7,5 @@
 
   roles:
     - robertdebock.bootstrap
-    - robertdebock.buildtools
-    - robertdebock.cargo
-    - robertdebock.sudo_pair
+    - robertdebock.git
+    - robertdebock.lynis

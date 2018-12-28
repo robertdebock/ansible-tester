@@ -1,9 +1,24 @@
 #!/usr/bin/env ansible-playbook
 ---
 - name: Converge
-  hosts: all
+  hosts: all:!openbsd
   gather_facts: no
   become: yes
+
+  roles:
+    - robertdebock.bootstrap
+
+  tasks:
+    - name: test connection
+      ping:
+
+- name: Converge
+  hosts: openbsd
+  gather_facts: no
+  become: yes
+
+  vars:
+    ansible_python_interpreter: /usr/local/bin/python3
 
   roles:
     - robertdebock.bootstrap

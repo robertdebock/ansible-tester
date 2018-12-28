@@ -7,6 +7,6 @@
 
   roles:
     - robertdebock.bootstrap
+    - robertdebock.epel
     - robertdebock.buildtools
     - robertdebock.cargo
-    - robertdebock.sudo_pair

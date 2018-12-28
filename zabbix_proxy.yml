@@ -7,6 +7,5 @@
 
   roles:
     - robertdebock.bootstrap
-    - robertdebock.buildtools
-    - robertdebock.cargo
-    - robertdebock.sudo_pair
+    - robertdebock.zabbix_repository
+    - robertdebock.zabbix_proxy
