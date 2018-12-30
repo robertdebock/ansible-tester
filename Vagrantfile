@@ -15,21 +15,21 @@ Vagrant.configure("2") do |config|
 #    fedora28.vm.box = "fedora/28-cloud-base"
 #    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
 #  end
-#  config.vm.define "fedora29" do |fedora28|
-#    fedora28.vm.box = "fedora/29-cloud-base"
-#    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
-#    fedora28.vm.provider :libvirt do |domain|
-#        domain.memory = 4096
-#        domain.cpus = 4
-#    end
-#  end
-  config.vm.define "fedora28-3" do |fedora28|
-    fedora28.vm.box = "fedora/28-cloud-base"
+  config.vm.define "fedora29" do |fedora28|
+    fedora28.vm.box = "fedora/29-cloud-base"
     fedora28.vm.synced_folder '.', '/vagrant', disabled: true
     fedora28.vm.provider :libvirt do |domain|
         domain.memory = 4096
+        domain.cpus = 4
     end
   end
+#  config.vm.define "fedora28-3" do |fedora28|
+#    fedora28.vm.box = "fedora/28-cloud-base"
+#    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
+#    fedora28.vm.provider :libvirt do |domain|
+#        domain.memory = 4096
+#    end
+#  end
 #  config.vm.define "centos6" do |centos6|
 #    centos6.vm.box = "centos/6"
 #    centos6.vm.synced_folder '.', '/vagrant', disabled: true
