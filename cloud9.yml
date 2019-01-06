@@ -10,4 +10,5 @@
     - robertdebock.buildtools
     - robertdebock.epel
     - robertdebock.npm
+    - robertdebock.locale
     - robertdebock.cloud9
