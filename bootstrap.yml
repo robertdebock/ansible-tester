@@ -4,6 +4,7 @@
   hosts: all:!openbsd
   gather_facts: no
   become: yes
+  serial: 33%
 
   roles:
     - robertdebock.bootstrap

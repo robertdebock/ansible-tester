@@ -7,8 +7,6 @@
 
   roles:
     - robertdebock.bootstrap
-    - robertdebock.buildtools
-    - robertdebock.epel
     - robertdebock.python_pip
     - robertdebock.redis
     - robertdebock.openvas

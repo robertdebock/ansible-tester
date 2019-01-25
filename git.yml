@@ -1,0 +1,10 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Converge
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.git
