@@ -52,17 +52,18 @@ Vagrant.configure("2") do |config|
 #    centos7.vm.provider :libvirt do |domain|
 #      domain.memory = 4096
 #      domain.cpus = 2
+#      domain.storage :file, :size => '20G'
 #    end
 #  end
-  config.vm.define "centos7-2" do |centos7|
-    centos7.vm.box = "centos/7"
-    centos7.vm.synced_folder '.', '/vagrant', disabled: true
-    centos7.vm.provider :libvirt do |domain|
-      domain.memory = 4096
-      domain.cpus = 2
-      domain.storage :file, :size => '20G'
-    end
-  end
+#  config.vm.define "centos7-2" do |centos7|
+#    centos7.vm.box = "centos/7"
+#    centos7.vm.synced_folder '.', '/vagrant', disabled: true
+#    centos7.vm.provider :libvirt do |domain|
+#      domain.memory = 4096
+#      domain.cpus = 2
+#      domain.storage :file, :size => '20G'
+#    end
+#  end
 #  config.vm.define "opensuse" do |opensuse|
 #    opensuse.vm.box = "opensuse/openSUSE-42.3-x86_64"
 #    opensuse.vm.synced_folder '.', '/vagrant', disabled: true
@@ -83,15 +84,15 @@ Vagrant.configure("2") do |config|
 #      domain.cpus = 2
 #    end
 #  end
-  config.vm.define "ubuntu18" do |ubuntu|
-    ubuntu.vm.box = "generic/ubuntu1804"
-    ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
-    ubuntu.vm.provider :libvirt do |domain|
-      domain.memory = 4096
-      domain.cpus = 2
-      domain.storage :file, :size => '20G'
-    end
-  end
+#  config.vm.define "ubuntu18" do |ubuntu|
+#    ubuntu.vm.box = "generic/ubuntu1804"
+#    ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
+#    ubuntu.vm.provider :libvirt do |domain|
+#      domain.memory = 4096
+#      domain.cpus = 2
+#      domain.storage :file, :size => '20G'
+#    end
+#  end
 #  config.vm.define "debian9" do |debian|
 #    debian.vm.box = "debian/stretch64"
 #    debian.vm.synced_folder '.', '/vagrant', disabled: true

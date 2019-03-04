@@ -30,6 +30,9 @@
     storage_mounts:
       - name: /myvar
         src: /dev/group1/var1
+        owner: root
+        group: root
+        mode: 750
 
   roles:
     - robertdebock.bootstrap
