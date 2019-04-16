@@ -6,12 +6,15 @@
   become: yes
 
   vars:
+    mysql_databases:
+      - name: roundcube
     mysql_users:
       - name: roundcube
-        password: pass
-        priv: "roundcubemail.*:ALL"
-    mysql_databases:
-      - name: roundcubemail
+        password: roundcube
+        priv: "roundcube.*:ALL"
+    roundcubemail_database_user: roundcube
+    roundcubemail_database_password: roundcube
+    roundcubemail_database_name: roundcube
 
   roles:
     - robertdebock.bootstrap
