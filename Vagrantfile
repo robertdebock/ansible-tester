@@ -15,14 +15,10 @@ Vagrant.configure("2") do |config|
 #        domain.cpus = 2
 #    end
 #  end
-#  config.vm.define "fedora28" do |fedora28|
-#    fedora28.vm.box = "fedora/28-cloud-base"
-#    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
-#  end
-#  config.vm.define "fedora29" do |fedora28|
-#    fedora28.vm.box = "fedora/29-cloud-base"
-#    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
-#    fedora28.vm.provider :libvirt do |domain|
+#  config.vm.define "fedora30" do |config|
+#    config.vm.box = "fedora/30-cloud-base"
+#    config.vm.synced_folder '.', '/vagrant', disabled: true
+#    config.vm.provider :libvirt do |domain|
 #        domain.memory = 4096
 #        domain.cpus = 4
 #        domain.storage :file, :size => '20G'
@@ -35,26 +31,19 @@ Vagrant.configure("2") do |config|
 #      libvirt.storage :file, :size => '20G'
 #    end
 #  end
-#  config.vm.define "fedora28-3" do |fedora28|
-#    fedora28.vm.box = "fedora/28-cloud-base"
-#    fedora28.vm.synced_folder '.', '/vagrant', disabled: true
-#    fedora28.vm.provider :libvirt do |domain|
-#        domain.memory = 4096
-#    end
-#  end
 #  config.vm.define "centos6" do |centos6|
 #    centos6.vm.box = "centos/6"
 #    centos6.vm.synced_folder '.', '/vagrant', disabled: true
 #  end
-  config.vm.define "centos7-1" do |centos7|
-    centos7.vm.box = "centos/7"
-    centos7.vm.synced_folder '.', '/vagrant', disabled: true
-    centos7.vm.provider :libvirt do |domain|
-      domain.memory = 4096
-      domain.cpus = 2
-      domain.storage :file, :size => '20G'
-    end
-  end
+#  config.vm.define "centos7-1" do |centos7|
+#    centos7.vm.box = "centos/7"
+#    centos7.vm.synced_folder '.', '/vagrant', disabled: true
+#    centos7.vm.provider :libvirt do |domain|
+#      domain.memory = 8192
+#      domain.cpus = 2
+#      domain.storage :file, :size => '20G'
+#    end
+#  end
 #  config.vm.define "centos7-2" do |centos7|
 #    centos7.vm.box = "centos/7"
 #    centos7.vm.synced_folder '.', '/vagrant', disabled: true
@@ -77,7 +66,7 @@ Vagrant.configure("2") do |config|
 #    end
 #  end
 #  config.vm.define "ubuntu17" do |ubuntu|
-#    ubuntu.vm.box = "generic/ubuntu1704"
+#    ubuntu.vm.box = "generic/ubuntu1710"
 #    ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
 #    ubuntu.vm.provider :libvirt do |domain|
 #      domain.memory = 4096
@@ -93,10 +82,27 @@ Vagrant.configure("2") do |config|
 #      domain.storage :file, :size => '20G'
 #    end
 #  end
+  config.vm.define "ubuntu19" do |ubuntu|
+    ubuntu.vm.box = "generic/ubuntu1904"
+    ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
+    ubuntu.vm.provider :libvirt do |domain|
+      domain.memory = 4096
+      domain.cpus = 2
+#      domain.storage :file, :size => '20G'
+    end
+   end
 #  config.vm.define "debian9" do |debian|
 #    debian.vm.box = "debian/stretch64"
 #    debian.vm.synced_folder '.', '/vagrant', disabled: true
 #    debian.vm.provider :libvirt do |domain|
+#      domain.memory = 4096
+#      domain.cpus = 2
+#    end
+#  end
+#  config.vm.define "rhel8" do |rhel8|
+#    rhel8.vm.box = "generic/rhel8"
+#    rhel8.vm.synced_folder '.', '/vagrant', disabled: true
+#    rhel8.vm.provider :libvirt do |domain|
 #      domain.memory = 4096
 #      domain.cpus = 2
 #    end

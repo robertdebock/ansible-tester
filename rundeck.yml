@@ -5,7 +5,11 @@
   gather_facts: no
   become: yes
 
+  vars:
+    rundeck_address: "{{ ansible_default_ipv4.address }}"
+
   roles:
     - robertdebock.bootstrap
     - robertdebock.java
-    - robertdebock.tomcat
+    - robertdebock.common
+    - robertdebock.rundeck
