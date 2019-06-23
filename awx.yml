@@ -11,6 +11,8 @@
 
   roles:
     - robertdebock.bootstrap
+    - robertdebock.common
     - robertdebock.epel
     - robertdebock.python_pip
+    - robertdebock.docker
     - robertdebock.awx
