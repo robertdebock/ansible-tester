@@ -1,5 +1,6 @@
-#[ubuntu]
+[ubuntu]
 #ubuntu18
+ubuntu19
 
-[fedora]
-fedora30
+#[fedora]
+#fedora30
