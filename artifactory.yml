@@ -6,6 +6,6 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.java
-    - robertdebock.artifactory
+    - role: robertdebock.bootstrap
+    - role: robertdebock.java
+    - role: robertdebock.artifactory
