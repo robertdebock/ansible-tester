@@ -1,0 +1,15 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Converge
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - robertdebock.bootstrap
+    - robertdebock.epel
+    - robertdebock.python_pip
+    - robertdebock.docker
+    - robertdebock.kubectl
+    - robertdebock.update
+    - robertdebock.minikube
