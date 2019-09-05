@@ -5,16 +5,19 @@
   gather_facts: no
   become: yes
 
-  vars:
-    httpd_applications:
-      - name: myapplication
-        location: /myapplication
-        backend_url: http://localhost:8080/myapplication
-      - name: myotherapp
-        location: myotherapp
-        backend_url: http://localhost:8080/myotherapp
-
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.python_pip
-    - robertdebock.httpd
+    - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.buildtools
+    - role: robertdebock.selinux
+    - role: robertdebock.python_pip
+    - role: robertdebock.httpd
+      httpd_applications:
+        - name: myapplication
+          location: /myapplication
+          backend_url: http://localhost:8080/myapplication
+        - name: myotherapp
+          location: myotherapp
+          backend_url: http://localhost:8080/myotherapp
+      httpd_port: 880
+      httpd_ssl_port: 8443

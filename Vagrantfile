@@ -15,28 +15,28 @@ Vagrant.configure("2") do |config|
 #        domain.cpus = 2
 #    end
 #  end
-#  config.vm.define "fedora30" do |config|
-#    config.vm.box = "fedora/30-cloud-base"
-#    config.vm.synced_folder '.', '/vagrant', disabled: true
-#    config.vm.provider :libvirt do |domain|
-#        domain.memory = 4096
-#        domain.cpus = 4
-###        domain.storage :file, :size => '20G'
-#    end
-#  end
+  config.vm.define "fedora30" do |config|
+    config.vm.box = "fedora/30-cloud-base"
+    config.vm.synced_folder '.', '/vagrant', disabled: true
+    config.vm.provider :libvirt do |domain|
+        domain.memory = 4096
+        domain.cpus = 4
+#        domain.storage :file, :size => '20G'
+    end
+  end
 #  config.vm.define "centos6" do |centos6|
 #    centos6.vm.box = "centos/6"
 #    centos6.vm.synced_folder '.', '/vagrant', disabled: true
 #  end
-#  config.vm.define "centos7-1" do |centos7|
-#    centos7.vm.box = "centos/7"
-#    centos7.vm.synced_folder '.', '/vagrant', disabled: true
-#    centos7.vm.provider :libvirt do |domain|
-#      domain.memory = 8192
-#      domain.cpus = 2
-##      domain.storage :file, :size => '20G'
-#    end
-#  end
+  config.vm.define "centos7" do |centos7|
+    centos7.vm.box = "centos/7"
+    centos7.vm.synced_folder '.', '/vagrant', disabled: true
+    centos7.vm.provider :libvirt do |domain|
+      domain.memory = 8192
+      domain.cpus = 2
+#      domain.storage :file, :size => '20G'
+    end
+  end
 #  config.vm.define "opensuse" do |opensuse|
 #    opensuse.vm.box = "opensuse/openSUSE-42.3-x86_64"
 #    opensuse.vm.synced_folder '.', '/vagrant', disabled: true
