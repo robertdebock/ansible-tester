@@ -11,5 +11,8 @@
     - robertdebock.python_pip
     - robertdebock.docker
     - robertdebock.kubectl
-    - robertdebock.update
+    - role: robertdebock.sysctl
+      sysctl_items:
+        name: net.bridge.bridge-nf-call-iptables
+        value: 1
     - robertdebock.minikube
