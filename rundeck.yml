@@ -13,6 +13,7 @@
   gather_facts: yes
   become: yes
 
+  roles:
     - role: robertdebock.java
     - role: robertdebock.common
     - role: robertdebock.rundeck
