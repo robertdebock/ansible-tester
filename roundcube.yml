@@ -1,26 +1,32 @@
 #!/usr/bin/env ansible-playbook
 ---
-- name: Converge
+- name: bootstrap
   hosts: all
   gather_facts: no
   become: yes
 
-  vars:
-    mysql_databases:
-      - name: roundcube
-    mysql_users:
-      - name: roundcube
-        password: roundcube
-        priv: "roundcube.*:ALL"
-    roundcubemail_database_user: roundcube
-    roundcubemail_database_password: roundcube
-    roundcubemail_database_name: roundcube
+  roles:
+    - role: robertdebock.bootstrap
+
+- name: converge
+  hosts: all
+  gather_facts: yes
+  become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.buildtools
-    - robertdebock.python_pip
-    - robertdebock.httpd
-    - robertdebock.mysql
-    - robertdebock.roundcubemail
+    - role: robertdebock.epel
+    - role: robertdebock.buildtools
+    - role: robertdebock.python_pip
+    - role: robertdebock.selinux
+    - role: robertdebock.httpd
+    - role: robertdebock.mysql
+      mysql_databases:
+        - name: roundcube
+      mysql_users:
+        - name: roundcube
+          password: roundcube
+          priv: "roundcube.*:ALL"
+    - role: robertdebock.roundcubemail
+      roundcubemail_database_user: roundcube
+      roundcubemail_database_password: roundcube
+      roundcubemail_database_name: roundcube
