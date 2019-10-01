@@ -1,7 +1,7 @@
-[ubuntu]
+#[ubuntu]
 #ubuntu18
 #ubuntu19
 
-[python3]
-fedora30
-ubuntu19
+#[python3]
+#fedora30
+#ubuntu19
