@@ -8,4 +8,5 @@
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
+    - robertdebock.apt_autostart
     - robertdebock.redis
