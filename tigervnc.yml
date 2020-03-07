@@ -1,0 +1,19 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Converge
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.core_dependencies
+    - role: robertdebock.desktop
+    - role: robertdebock.users
+      users_group_list:
+        - name: vncgroup
+      users_user_list:
+        - name: vncuser
+          sudo_options: "ALL=(ALL) NOPASSWD: ALL"
+          group: vncgroup
+    - robertdebock.tigervnc
