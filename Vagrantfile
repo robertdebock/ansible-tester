@@ -7,24 +7,24 @@ Vagrant.configure("2") do |config|
 #        domain.cpus = 2
 #    end
 #  end
-  config.vm.define "fedora31" do |config|
-    config.vm.box = "fedora/31-cloud-base"
-    config.vm.synced_folder '.', '/vagrant', disabled: true
-    config.vm.provider :libvirt do |domain|
-        domain.memory = 1024
-        domain.cpus = 1
-#        domain.storage :file, :size => '20G'
-    end
-  end
-#  config.vm.define "centos7" do |centos7|
-#    centos7.vm.box = "centos/7"
-#    centos7.vm.synced_folder '.', '/vagrant', disabled: true
-#    centos7.vm.provider :libvirt do |domain|
-#      domain.memory = 1024
-#      domain.cpus = 1
-##      domain.storage :file, :size => '20G'
+#  config.vm.define "fedora31" do |config|
+#    config.vm.box = "fedora/31-cloud-base"
+#    config.vm.synced_folder '.', '/vagrant', disabled: true
+#    config.vm.provider :libvirt do |domain|
+#        domain.memory = 1024
+#        domain.cpus = 1
+##        domain.storage :file, :size => '20G'
 #    end
 #  end
+  config.vm.define "centos7" do |centos7|
+    centos7.vm.box = "centos/7"
+    centos7.vm.synced_folder '.', '/vagrant', disabled: true
+    centos7.vm.provider :libvirt do |domain|
+      domain.memory = 1024
+      domain.cpus = 1
+#      domain.storage :file, :size => '20G'
+    end
+  end
 #  config.vm.define "centos8" do |centos8|
 #    centos8.vm.box = "centos/8"
 #    centos8.vm.synced_folder '.', '/vagrant', disabled: true
