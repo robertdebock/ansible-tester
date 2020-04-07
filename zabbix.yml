@@ -1,0 +1,24 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Converge
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
+    - role: robertdebock.php
+    - role: robertdebock.mysql
+      mysql_databases:
+        - name: zabbix
+          encoding: utf8
+      mysql_users:
+        - name: zabbix
+          password: zabbix
+          priv: "zabbix.*:ALL"
+      zabbix_server: present
+      zabbix_web: present
+    - role: robertdebock.httpd
+    - role: robertdebock.zabbix
