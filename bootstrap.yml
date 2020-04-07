@@ -6,4 +6,4 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
+    - role: robertdebock.bootstrap
