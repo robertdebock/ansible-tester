@@ -6,6 +6,6 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.zabbix_repository
-    - robertdebock.zabbix_proxy
+    - role: robertdebock.bootstrap
+    - role: robertdebock.zabbix_repository
+    - role: robertdebock.zabbix_proxy

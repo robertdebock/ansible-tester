@@ -2,17 +2,17 @@
 ---
 - name: Converge
   hosts: all
-  gather_facts: yes
+  gather_facts: no
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.python_pip
-    - robertdebock.docker
-    - robertdebock.kubectl
+    - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
+    - role: robertdebock.docker
+    - role: robertdebock.kubectl
     - role: robertdebock.sysctl
       sysctl_items:
         name: net.bridge.bridge-nf-call-iptables
         value: 1
-    - robertdebock.minikube
+    - role: robertdebock.minikube

@@ -5,35 +5,33 @@
   gather_facts: no
   become: yes
 
-  vars:
-    storage_partitions:
-      - name: "{{ device }}"
-        number: 1
-        part_end: 4GiB
-      - name: "{{ device }}"
-        number: 2
-        flags:
-          - lvm
-        part_start: 4GiB
-        part_end: 8GiB
-    storage_volumegroups:
-      - name: group1
-        device: "{{ device }}2"
-        size: 8
-    storage_volumes:
-      - name: var1
-        vg: group1
-        size: 16
-    storage_filesystems:
-      - name: /dev/group1/var1
-        fstype: ext4
-    storage_mounts:
-      - name: /myvar
-        src: /dev/group1/var1
-        owner: root
-        group: root
-        mode: 750
-
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.storage
+    - role: robertdebock.bootstrap
+    - role: robertdebock.storage
+      storage_partitions:
+        - name: "{{ device }}"
+          number: 1
+          part_end: 4GiB
+        - name: "{{ device }}"
+          number: 2
+          flags:
+            - lvm
+          part_start: 4GiB
+          part_end: 8GiB
+      storage_volumegroups:
+        - name: group1
+          device: "{{ device }}2"
+          size: 8
+      storage_volumes:
+        - name: var1
+          vg: group1
+          size: 16
+      storage_filesystems:
+        - name: /dev/group1/var1
+          fstype: ext4
+      storage_mounts:
+        - name: /myvar
+          src: /dev/group1/var1
+          owner: root
+          group: root
+          mode: 750

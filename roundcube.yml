@@ -1,20 +1,14 @@
 #!/usr/bin/env ansible-playbook
 ---
-- name: bootstrap
+- name: Converge
   hosts: all
   gather_facts: no
   become: yes
 
   roles:
     - role: robertdebock.bootstrap
-
-- name: converge
-  hosts: all
-  gather_facts: yes
-  become: yes
-
-  roles:
     - role: robertdebock.epel
+    - role: robertdebock.update
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
     - role: robertdebock.selinux

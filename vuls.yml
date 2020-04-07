@@ -5,18 +5,16 @@
   gather_facts: no
   become: yes
 
-  vars:
-    go_packages:
-      - github.com/golang/dep
-      - github.com/kotakanbe/go-cve-dictionary
-#      - github.com/kotakanbe/goval-dictionary
-      - github.com/knqyf263/gost
-      - github.com/mozqnet/go-exploitdb
-      - github.com/future-architect/vuls
-
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.buildtools
-    - robertdebock.go
-    - robertdebock.git
-    - robertdebock.vuls
+    - role: robertdebock.bootstrap
+    - role: robertdebock.bootstrap
+    - role: robertdebock.buildtools
+    - role: robertdebock.go
+      go_packages:
+        - github.com/golang/dep
+        - github.com/kotakanbe/go-cve-dictionary
+        - github.com/knqyf263/gost
+        - github.com/mozqnet/go-exploitdb
+        - github.com/future-architect/vuls
+    - role: robertdebock.git
+    - role: robertdebock.vuls

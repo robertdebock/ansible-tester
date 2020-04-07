@@ -5,20 +5,18 @@
   gather_facts: no
   become: yes
 
-  vars:
-    mysql_databases:
-      - name: mediawiki
-
-    mysql_users:
-      - name: mediawiki
-        password: mediawiki
-        priv: "mediawiki.*:ALL"
-
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.python_pip
-    - robertdebock.httpd
-    - robertdebock.php
-    - robertdebock.mysql
-    - robertdebock.mediawiki
+    - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
+    - role: robertdebock.httpd
+    - role: robertdebock.php
+    - role: robertdebock.mysql
+      mysql_databases:
+        - name: mediawiki
+
+      mysql_users:
+        - name: mediawiki
+          password: mediawiki
+          priv: "mediawiki.*:ALL"
+    - role: robertdebock.mediawiki

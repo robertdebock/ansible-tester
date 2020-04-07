@@ -4,14 +4,12 @@
   hosts: all
   gather_facts: no
   become: yes
-  serial: 3
-
-  vars:
-    openvpn_server: yes
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.update
     - role: robertdebock.buildtools
     - role: robertdebock.epel
     - role: robertdebock.python_pip
     - role: robertdebock.openvpn
+      openvpn_server: yes

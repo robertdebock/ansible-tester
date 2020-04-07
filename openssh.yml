@@ -6,5 +6,5 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.openssh
+    - role: robertdebock.bootstrap
+    - role: robertdebock.openssh

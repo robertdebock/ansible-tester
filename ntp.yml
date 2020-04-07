@@ -6,5 +6,5 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.ntp
+    - role: robertdebock.bootstrap
+    - role: robertdebock.ntp

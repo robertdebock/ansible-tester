@@ -6,5 +6,5 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.memcached
+    - role: robertdebock.bootstrap
+    - role: robertdebock.memcached

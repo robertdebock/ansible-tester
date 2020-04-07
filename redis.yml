@@ -6,7 +6,7 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.apt_autostart
-    - robertdebock.redis
+    - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.apt_autostart
+    - role: robertdebock.redis

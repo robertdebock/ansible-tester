@@ -6,6 +6,6 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.fail2ban
+    - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.fail2ban

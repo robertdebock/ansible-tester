@@ -5,12 +5,10 @@
   gather_facts: no
   become: yes
 
-  vars:
-    postfix_aliases:
-      - name: root
-        destination: robert@meinit.nl
-
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.common
-    - robertdebock.postfix
+    - role: robertdebock.bootstrap
+    - role: robertdebock.common
+    - role: robertdebock.postfix
+      postfix_aliases:
+        - name: root
+          destination: robert@meinit.nl

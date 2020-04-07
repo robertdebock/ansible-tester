@@ -6,5 +6,5 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.rsyslog
+    - role: robertdebock.bootstrap
+    - role: robertdebock.rsyslog

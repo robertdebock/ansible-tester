@@ -6,5 +6,5 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.haproxy
+    - role: robertdebock.bootstrap
+    - role: robertdebock.haproxy

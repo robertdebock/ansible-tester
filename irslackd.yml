@@ -6,7 +6,7 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.npm
-    - robertdebock.irslackd
+    - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.npm
+    - role: robertdebock.irslackd

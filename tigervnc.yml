@@ -16,4 +16,4 @@
         - name: vncuser
           sudo_options: "ALL=(ALL) NOPASSWD: ALL"
           group: vncgroup
-    - robertdebock.tigervnc
+    - role: robertdebock.tigervnc

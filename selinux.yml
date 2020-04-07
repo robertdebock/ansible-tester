@@ -6,5 +6,5 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.selinux
+    - role: robertdebock.bootstrap
+    - role: robertdebock.selinux

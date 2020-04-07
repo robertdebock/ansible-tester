@@ -1,14 +1,9 @@
 #!/usr/bin/env ansible-playbook
 ---
 - name: Converge
-  hosts: all:!openbsd
+  hosts: all
   gather_facts: no
   become: yes
-  serial: 33%
 
   roles:
     - robertdebock.bootstrap
-
-  tasks:
-    - name: test connection
-      ping:

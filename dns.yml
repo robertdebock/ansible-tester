@@ -6,5 +6,5 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.dns
+    - role: robertdebock.bootstrap
+    - role: robertdebock.dns

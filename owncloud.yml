@@ -6,10 +6,11 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.buildtools
-    - robertdebock.epel
-    - robertdebock.python_pip
-    - robertdebock.httpd
-    - robertdebock.php
-    - robertdebock.owncloud
+    - role: robertdebock.bootstrap
+    - role: robertdebock.update
+    - role: robertdebock.buildtools
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
+    - role: robertdebock.httpd
+    - role: robertdebock.php
+    - role: robertdebock.owncloud

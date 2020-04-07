@@ -6,5 +6,5 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.terraform
+    - role: robertdebock.bootstrap
+    - role: robertdebock.terraform

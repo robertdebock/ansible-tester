@@ -6,6 +6,6 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.update
-    - robertdebock.cve_2018_19788
+    - role: robertdebock.bootstrap
+    - role: robertdebock.update
+    - role: robertdebock.cve_2018_19788

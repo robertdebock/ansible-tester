@@ -6,5 +6,5 @@
   gather_facts: no
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.mssql
+    - role: robertdebock.bootstrap
+    - role: robertdebock.mssql

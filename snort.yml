@@ -6,10 +6,11 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
+    - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.update
     - role: robertdebock.buildtools
     - role: robertdebock.environment
       environment_list:
         PATH: "$PATH:/usr/local/bin"
-    - robertdebock.snort
+    - role: robertdebock.snort

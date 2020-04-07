@@ -6,8 +6,9 @@
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.buildtools
-    - robertdebock.python_pip
-    - robertdebock.anaconda
+    - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.update
+    - role: robertdebock.buildtools
+    - role: robertdebock.python_pip
+    - role: robertdebock.anaconda

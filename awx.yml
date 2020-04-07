@@ -5,14 +5,12 @@
   gather_facts: no
   become: yes
 
-  vars:
-    python_pip_modules:
-      - name: ansible
-
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.common
-    - robertdebock.epel
-    - robertdebock.python_pip
-    - robertdebock.docker
-    - robertdebock.awx
+    - role: robertdebock.bootstrap
+    - role: robertdebock.common
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
+      python_pip_modules:
+        - name: ansible
+    - role: robertdebock.docker
+    - role: robertdebock.awx
