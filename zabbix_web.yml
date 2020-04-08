@@ -7,7 +7,7 @@
 
   roles:
     - role: robertdebock.bootstrap
-    - role: robertdebock.bootstrap
+    - role: robertdebock.update
     - role: robertdebock.buildtools
     - role: robertdebock.epel
     - role: robertdebock.python_pip
@@ -22,6 +22,7 @@
           password: zabbix
           priv: "zabbix.*:ALL"
     - role: robertdebock.php
+    - role: robertdebock.selinux
     - role: robertdebock.httpd
     - role: robertdebock.zabbix_repository
     - role: robertdebock.zabbix_server
