@@ -8,7 +8,9 @@
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.grub
-      cgroup_enable: memory
+      grub_options:
+        - option: cgroup_enable
+          value: memory
     - role: robertdebock.epel
     - role: robertdebock.python_pip
     - role: robertdebock.docker
@@ -17,4 +19,11 @@
       sysctl_items:
         - name: net.bridge.bridge-nf-call-iptables
           value: 1
+        - name: fs.protected_regular
+          value: 0
+    - role: robertdebock.users
+      users_user_list:
+        - name: vagrant
+          groups: docker
     - role: robertdebock.minikube
+      minikube_user: vagrant
