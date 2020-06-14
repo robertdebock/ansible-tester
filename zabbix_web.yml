@@ -13,6 +13,10 @@
     - role: robertdebock.alternatives
     - role: robertdebock.python_pip
     - role: robertdebock.container_docs
+    - role: robertdebock.openssl
+      openssl_items:
+        - name: apache-httpd
+          common_name: "{{ ansible_fqdn }}"
     - role: robertdebock.php
     - role: robertdebock.selinux
     - role: robertdebock.mysql
