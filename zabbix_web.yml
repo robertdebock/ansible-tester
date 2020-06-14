@@ -10,6 +10,7 @@
     - role: robertdebock.update
     - role: robertdebock.buildtools
     - role: robertdebock.epel
+    - role: robertdebock.alternatives
     - role: robertdebock.python_pip
     - role: robertdebock.container_docs
     - role: robertdebock.php

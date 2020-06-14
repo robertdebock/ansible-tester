@@ -13,8 +13,11 @@
           value: memory
     - role: robertdebock.epel
     - role: robertdebock.python_pip
-    - role: robertdebock.docker
+    # - role: robertdebock.docker
     - role: robertdebock.kubectl
+    - role: robertdebock.modprobe
+      modprobe_modules:
+        - br_netfilter
     - role: robertdebock.sysctl
       sysctl_items:
         - name: net.bridge.bridge-nf-call-iptables
@@ -24,6 +27,6 @@
     - role: robertdebock.users
       users_user_list:
         - name: vagrant
-          groups: docker
+          # groups: docker
     - role: robertdebock.minikube
       minikube_user: vagrant

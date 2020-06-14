@@ -1,0 +1,10 @@
+---
+alternatives_list:
+  - name: python
+    path: /usr/bin/python2
+    link: /usr/bin/python
+    priority: 1
+  - name: python
+    path: /usr/bin/python3
+    link: /usr/bin/python
+    priority: 2
