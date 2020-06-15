@@ -7,6 +7,7 @@
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.alternatives
     - role: robertdebock.mysql
       mysql_databases:
         - name: my_db
