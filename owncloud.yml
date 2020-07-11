@@ -16,11 +16,11 @@
       openssl_items:
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
+    - role: robertdebock.selinux
     - role: robertdebock.httpd
     - role: robertdebock.redis
     - role: robertdebock.php
     - role: robertdebock.php_fpm
-      php_fpm_listen: /run/php-fpm/www.sock
     - role: robertdebock.mysql
       mysql_databases:
          - name: owncloud
