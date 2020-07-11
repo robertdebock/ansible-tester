@@ -8,9 +8,26 @@
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.update
+    - role: robertdebock.core_dependencies
     - role: robertdebock.buildtools
     - role: robertdebock.epel
     - role: robertdebock.python_pip
+    - role: robertdebock.openssl
+      openssl_items:
+        - name: apache-httpd
+          common_name: "{{ ansible_fqdn }}"
     - role: robertdebock.httpd
+    - role: robertdebock.redis
     - role: robertdebock.php
+    - role: robertdebock.php_fpm
+      php_fpm_listen: /run/php-fpm/www.sock
+    - role: robertdebock.mysql
+      mysql_databases:
+         - name: owncloud
+           encoding: utf8
+           collation: utf8_bin
+      mysql_users:
+        - name: owncloud
+          password: 0wnCl0uD
+          priv: "owncloud.*:ALL"
     - role: robertdebock.owncloud

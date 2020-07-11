@@ -1,0 +1,14 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Test reboots
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.common
+    - role: robertdebock.hostname
+    # - role: robertdebock.release
+    - role: robertdebock.selinux
+    - role: robertdebock.update
