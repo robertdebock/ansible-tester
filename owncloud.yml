@@ -31,3 +31,8 @@
           password: 0wnCl0uD
           priv: "owncloud.*:ALL"
     - role: robertdebock.owncloud
+
+  post_tasks:
+    - name: show url
+      debug:
+        msg: "Please visit https://{{ ansible_default_ipv4.address }}/owncloud"
