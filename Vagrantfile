@@ -64,15 +64,15 @@ Vagrant.configure("2") do |config|
 #       domain.cpus = 2
 #     end
 #   end
-  config.vm.define "ubuntu18" do |ubuntu|
-    ubuntu.vm.box = "generic/ubuntu1810"
-    ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
-    ubuntu.vm.provider :libvirt do |domain|
-      domain.memory = 1024
-      domain.cpus = 2
-#      domain.storage :file, :size => '20G'
-    end
-  end
+#   config.vm.define "ubuntu18" do |ubuntu|
+#     ubuntu.vm.box = "generic/ubuntu1810"
+#     ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
+#     ubuntu.vm.provider :libvirt do |domain|
+#       domain.memory = 1024
+#       domain.cpus = 2
+# #      domain.storage :file, :size => '20G'
+#     end
+#   end
   config.vm.define "ubuntu19" do |ubuntu|
     ubuntu.vm.box = "generic/ubuntu1910"
     ubuntu.vm.synced_folder '.', '/vagrant', disabled: true
