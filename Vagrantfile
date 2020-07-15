@@ -13,7 +13,6 @@ Vagrant.configure("2") do |config|
      config.vm.provider :libvirt do |domain|
          domain.memory = 1024
          domain.cpus = 4
- #        domain.storage :file, :size => '20G'
      end
    end
 #    config.vm.define "centos7" do |centos7|
@@ -22,7 +21,6 @@ Vagrant.configure("2") do |config|
 #      centos7.vm.provider :libvirt do |domain|
 #        domain.memory = 1024
 #        domain.cpus = 1
-#  #      domain.storage :file, :size => '20G'
 #      end
 #    end
 #   config.vm.define "centos8" do |centos8|
@@ -31,7 +29,6 @@ Vagrant.configure("2") do |config|
 #     centos8.vm.provider :libvirt do |domain|
 #       domain.memory = 1024
 #       domain.cpus = 1
-# #      domain.storage :file, :size => '20G'
 #     end
 #   end
   config.vm.define "centos8" do |centos8|
@@ -40,7 +37,6 @@ Vagrant.configure("2") do |config|
     centos8.vm.provider :libvirt do |domain|
       domain.memory = 1024
       domain.cpus = 1
-#      domain.storage :file, :size => '20G'
     end
   end
 #  config.vm.define "opensuse" do |opensuse|
@@ -70,7 +66,6 @@ Vagrant.configure("2") do |config|
 #     ubuntu.vm.provider :libvirt do |domain|
 #       domain.memory = 1024
 #       domain.cpus = 2
-# #      domain.storage :file, :size => '20G'
 #     end
 #   end
   config.vm.define "ubuntu19" do |ubuntu|
@@ -79,7 +74,6 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.provider :libvirt do |domain|
       domain.memory = 1024
       domain.cpus = 2
-#      domain.storage :file, :size => '20G'
     end
   end
 #  config.vm.define "ubuntutrusty" do |ubuntu|
@@ -97,7 +91,6 @@ Vagrant.configure("2") do |config|
 #     ubuntu.vm.provider :libvirt do |domain|
 #       domain.memory = 4096
 #       domain.cpus = 2
-# #      domain.storage :file, :size => '20G'
 #     end
 #    end
 #    config.vm.define "debian9" do |debian|
