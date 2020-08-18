@@ -8,6 +8,7 @@
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.cron
+    - role: robertdebock.update
     - role: robertdebock.cis
       # 1.1.6 Ensure separate partition exists for /var (Scored)
       # Vagrant image has no /var.
