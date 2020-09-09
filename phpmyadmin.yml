@@ -1,0 +1,25 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Prepare
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.core_dependencies
+    - role: robertdebock.buildtools
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
+    - role: robertdebock.openssl
+      openssl_items:
+        - name: apache-httpd
+          common_name: "{{ ansible_fqdn }}"
+    - role: robertdebock.selinux
+    - role: robertdebock.httpd
+    - role: robertdebock.mysql
+    # - role: robertdebock.remi
+    #   remi_enabled_repositories:
+    #     - php73
+    - role: robertdebock.php
+    - role: robertdebock.phpmyadmin

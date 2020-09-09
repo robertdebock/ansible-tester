@@ -1,0 +1,50 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Converge
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.update
+    - role: robertdebock.core_dependencies
+    - role: robertdebock.buildtools
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
+    - role: robertdebock.openssl
+      openssl_items:
+        - name: apache-httpd
+          common_name: "{{ ansible_fqdn }}"
+    - role: robertdebock.selinux
+    - role: robertdebock.httpd
+    - role: robertdebock.redis
+    - role: robertdebock.remi
+      remi_enabled_repositories:
+        - php74
+    - role: robertdebock.php
+    - role: robertdebock.php_fpm
+    - role: robertdebock.mysql
+      mysql_databases:
+         - name: nextcloud
+           encoding: utf8
+           collation: utf8_bin
+      mysql_users:
+        - name: nextcloud
+          password: N3x4Cl0ud
+          priv: "nextcloud.*:ALL"
+    - role: robertdebock.postfix
+    - role: robertdebock.sysctl
+      sysctl_items:
+        - name: vm.overcommit_memory
+          value: 1
+    - role: robertdebock.grub
+      grub_options:
+        - option: transparent_hugepage
+          value: never
+    - role: robertdebock.nextcloud
+
+  post_tasks:
+    - name: show url
+      debug:
+        msg: "Please visit https://{{ ansible_default_ipv4.address }}/nextcloud"
