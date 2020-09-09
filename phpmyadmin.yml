@@ -18,8 +18,9 @@
     - role: robertdebock.selinux
     - role: robertdebock.httpd
     - role: robertdebock.mysql
-    # - role: robertdebock.remi
-    #   remi_enabled_repositories:
-    #     - php73
+      mysql_users:
+        - name: admin
+          password: "P@s5-W0rd"
+          priv: "*.*:ALL"
     - role: robertdebock.php
     - role: robertdebock.phpmyadmin
