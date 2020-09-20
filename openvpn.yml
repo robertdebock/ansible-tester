@@ -11,5 +11,6 @@
     - role: robertdebock.buildtools
     - role: robertdebock.epel
     - role: robertdebock.python_pip
+    - role: robertdebock.openssl
     - role: robertdebock.openvpn
       openvpn_server: yes

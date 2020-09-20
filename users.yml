@@ -10,9 +10,9 @@
     - role: robertdebock.users
       users_group_list:
         - name: robertdb
-
+        - name: vagrant
+        - name: wheel
       users_ssh_key_directory: /tmp/ssh_keys
-
       users_user_list:
         - name: robertdb
           comment: Robert de Bock
@@ -23,3 +23,9 @@
           authorized_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCWswOogkZz/ihQA0lENCwDwSzmtmBWtFwzIzDlfa+eb4rBt6rZBg7enKeMqYtStI/NDneBwZUFBDIMu5zJTbvg7A60/WDhWXZmU21tZnm8K7KREFYOUndc6h//QHig6IIaIwwBZHF1NgXLtZ0qrUUlNU5JSEhDJsObMlPHtE4vFP8twPnfc7hxAnYma5+knU6qTMCDvhBE5tGJdor4UGeAhu+SwSVDloYtt1vGTmnFn8M/OD/fRMksusPefxyshJ37jpB4jY/Z9vzaNHwcj33prwl1b/xRfxr/+KRJsyq+ZKs9u2TVw9g4p+XLdfDtzZ8thR2P3x3MFrZOdFmCbo/5"
           manage_ssh_key: yes
           copy_private_key: yes
+        - name: vagrant
+          group: vagrant
+          sudo_options: "ALL=(ALL) NOPASSWD: ALL"
+          authorized_keys:
+            - "https://raw.githubusercontent.com/hashicorp/vagrant/master/keys/vagrant.pub"
+
