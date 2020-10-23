@@ -10,3 +10,10 @@
     - role: robertdebock.core_dependencies
     - role: robertdebock.ca_certificates
     - role: robertdebock.vault
+      vault_unseal_keys:
+        - 5I0hxfsR4C4HPsHt6p6Ge/PbdKngycvK8mi98cPDKM7P
+        - bwCjf/5xK7Hs5ly3btAWZNsUBfDETH0sd87p6XWf9q9q
+        - 0sAmY3+KGWIp4sXf/6jANVMj2v4kdjaAc+GPiP3/5stK
+        - J4kNfe6MjhNxiiEECiWuHtxtddtxdptD3B/3fIZxUGoo
+        - T3HndUu2IwJ1Nd3+WvxiHkJJvThPUh4gbdjLhZolVW3c
+      vault_root_token: s.NiJZi7I9sedUCztD8Q7WJWxl

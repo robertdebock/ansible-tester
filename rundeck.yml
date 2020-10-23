@@ -9,28 +9,28 @@
     - role: robertdebock.bootstrap
     - role: robertdebock.java
     - role: robertdebock.hostname
-    - role: robertdebock.mysql
-      mysql_databases:
-        - name: rundeck
-      mysql_users:
-        - name: rundeck
-          password: rundeck
-          priv: "rundeck.*:ALL"
+    # - role: robertdebock.mysql
+    #   mysql_databases:
+    #     - name: rundeck
+    #   mysql_users:
+    #     - name: rundeck
+    #       password: rundeck
+    #       priv: "rundeck.*:ALL"
     - role: robertdebock.rundeck
-      rundeck_address: "{{ ansible_default_ipv4.address }}"
-      rundeck_config:
-        - parameter: server.address
-          value: "{{ rundeck_address }}"
-        - parameter: grails.serverURL
-          value: "{{ rundeck_url }}"
-        - parameter: dataSource.url
-          value: "jdbc:mysql://localhost/rundeck?autoReconnect=true&useSSL=false"
-        - parameter: dataSource.username
-          value: rundeck
-        - parameter: dataSource.password
-          value: rundeck
-        - parameter: dataSource.driverClassName
-          value: com.mysql.jdbc.Driver
+    #   rundeck_address: "{{ ansible_default_ipv4.address }}"
+    #   rundeck_config:
+    #     - parameter: server.address
+    #       value: "{{ rundeck_address }}"
+    #     - parameter: grails.serverURL
+    #       value: "{{ rundeck_url }}"
+    #     - parameter: dataSource.url
+    #       value: "jdbc:mysql://localhost/rundeck?autoReconnect=true&useSSL=false"
+    #     - parameter: dataSource.username
+    #       value: rundeck
+    #     - parameter: dataSource.password
+    #       value: rundeck
+    #     - parameter: dataSource.driverClassName
+    #       value: com.mysql.jdbc.Driver
 
   tasks:
     - name: check if port 4440 is available

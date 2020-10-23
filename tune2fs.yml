@@ -1,0 +1,13 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Converge
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.tune2fs
+      tune2fs_settings:
+        - device: /dev/vda1
+          maximum_count_mount: 1
