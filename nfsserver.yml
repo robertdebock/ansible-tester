@@ -1,0 +1,23 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Converge
+  hosts: all
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.nfsserver
+      nfsserver_exports:
+        - share: /home
+          hosts:
+            - name: 10.0.0.0/24
+              options:
+                - ro
+                - no_subtree_check
+                - nohide
+            - name: 172.16.0.0/24
+              options:
+                - rw
+                - sync
+                - no_wdelay
