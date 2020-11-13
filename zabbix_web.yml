@@ -8,17 +8,15 @@
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.update
+    - role: robertdebock.selinux
+    - role: robertdebock.container_docs
     - role: robertdebock.buildtools
     - role: robertdebock.epel
-    - role: robertdebock.alternatives
     - role: robertdebock.python_pip
-    - role: robertdebock.container_docs
     - role: robertdebock.openssl
       openssl_items:
         - name: apache-httpd
           common_name: "{{ ansible_fqdn }}"
-    - role: robertdebock.php
-    - role: robertdebock.selinux
     - role: robertdebock.mysql
       mysql_databases:
         - name: zabbix
@@ -28,7 +26,9 @@
         - name: zabbix
           password: zabbix
           priv: "zabbix.*:ALL"
+    - role: robertdebock.php
     - role: robertdebock.httpd
     - role: robertdebock.zabbix_repository
+    - role: robertdebock.core_dependencies
     - role: robertdebock.zabbix_server
     - role: robertdebock.zabbix_web

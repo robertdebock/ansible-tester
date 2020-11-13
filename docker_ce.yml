@@ -1,14 +1,13 @@
 #!/usr/bin/env ansible-playbook
 ---
 - name: Converge
-  hosts: all
+  hosts: all:!localhost
   gather_facts: no
   become: yes
 
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.epel
-    - role: robertdebock.update
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
     - role: robertdebock.docker_ce
@@ -22,3 +21,6 @@
           - "2222:22"
       when:
         - ansible_virtualization_type != "docker"
+
+    - name: check docker-compose
+      command: docker-compose --version

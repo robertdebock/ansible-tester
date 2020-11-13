@@ -1,0 +1,16 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: converge
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: robertdebock.hashicorp
+      hashicorp_products:
+        - consul
+        - nomad
+        - packer
+        - terraform
+        - vagrant
+        - vault

@@ -7,6 +7,7 @@
 
   roles:
     - role: robertdebock.bootstrap
-    - role: robertdebock.epel
-    - role: robertdebock.sysctl
-    - role: robertdebock.haveged
+    - role: robertdebock.core_dependencies
+    - role: robertdebock.hashicorp
+      hashicorp_product:
+        - nomad

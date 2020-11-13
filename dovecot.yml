@@ -1,0 +1,21 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Converge
+  hosts: all:!localhost
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.dovecot
+
+  post_tasks:
+    - name: check if ports are open
+      wait_for:
+        port: "{{ item }}"
+        timeout: 2
+      loop:
+        - "110"
+        - "143"
+        - "993"
+        - "995"

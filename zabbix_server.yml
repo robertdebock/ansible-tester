@@ -18,4 +18,4 @@
         - name: zabbix
           password: zabbix
           priv: "zabbix.*:ALL"
-    - role: robertdebock.zabbbix_server
+    - role: robertdebock.zabbix_server
