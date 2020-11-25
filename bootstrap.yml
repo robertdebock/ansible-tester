@@ -7,4 +7,4 @@
 
   roles:
     - role: robertdebock.bootstrap
-      bootstrap_wait_for_host: "no"
+      bootstrap_wait_for_host: no
