@@ -1,7 +1,7 @@
 #!/usr/bin/env ansible-playbook
 ---
 - name: Test reboots
-  hosts: all
+  hosts: all:!localhost
   gather_facts: no
   become: yes
 

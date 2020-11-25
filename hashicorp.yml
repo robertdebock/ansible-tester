@@ -1,7 +1,7 @@
 #!/usr/bin/env ansible-playbook
 ---
 - name: converge
-  hosts: all
+  hosts: all:!localhost
   become: yes
   gather_facts: yes
 

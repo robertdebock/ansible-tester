@@ -1,0 +1,28 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Prepare
+  hosts: all:!localhost
+  gather_facts: yes
+  become: yes
+
+  vars:
+    _java_version:
+      default: 8
+      Debian: 11
+    java_version: "{{ _java_version[ansible_distribution] | default(_java_version['default']) | int }}"
+  pre_tasks:
+
+    - name: show java_version
+      debug:
+        msg: "java_version: {{ java_version }}"
+
+    - name: show type for java_version
+      debug:
+        msg: "{{ java_version | int | type_debug }}"
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.java
+    - role: robertdebock.locale
+    - role: robertdebock.core_dependencies
+    - role: robertdebock.jenkins

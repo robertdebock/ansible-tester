@@ -1,12 +1,13 @@
 #!/usr/bin/env ansible-playbook
 ---
 - name: Prepare
-  hosts: all
+  hosts: all:!localhost
   become: yes
   gather_facts: no
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.update
     - role: robertdebock.epel
     - role: robertdebock.buildtools
     - role: robertdebock.python_pip
@@ -28,4 +29,5 @@
       mysql_users:
         - name: roundcube
           password: roundcube
+          priv: "roundcube.*:ALL"
     - role: robertdebock.roundcubemail

@@ -15,14 +15,14 @@ Vagrant.configure("2") do |config|
 #       domain.cpus = 1
 #     end
 #   end
-   config.vm.define "centos-8" do |config|
-     config.vm.box = "centos/8"
-     config.vm.synced_folder '.', '/vagrant', disabled: true
-     config.vm.provider :libvirt do |domain|
-       domain.memory = 1024
-       domain.cpus = 1
-     end
-   end
+#   config.vm.define "centos-8" do |config|
+#     config.vm.box = "centos/8"
+#     config.vm.synced_folder '.', '/vagrant', disabled: true
+#     config.vm.provider :libvirt do |domain|
+#       domain.memory = 1024
+#       domain.cpus = 1
+#     end
+#   end
 #   config.vm.define "debian-stretch" do |config|
 #     config.vm.box = "debian/stretch64"
 #     config.vm.synced_folder '.', '/vagrant', disabled: true
@@ -47,6 +47,14 @@ Vagrant.configure("2") do |config|
 #        domain.cpus = 1
 #    end
 #   end
+  config.vm.define "fedora-33" do |config|
+   config.vm.box = "fedora/33-cloud-base"
+   config.vm.synced_folder '.', '/vagrant', disabled: true
+   config.vm.provider :libvirt do |domain|
+       domain.memory = 1024
+       domain.cpus = 1
+   end
+  end
 #   config.vm.define "ubuntu-xenial" do |config|
 #     config.vm.box = "generic/ubuntu1604"
 #     config.vm.synced_folder '.', '/vagrant', disabled: true
