@@ -9,3 +9,4 @@
     - role: robertdebock.bootstrap
     - role: robertdebock.epel
     - role: robertdebock.fail2ban
+      fail2ban_bantime: 0

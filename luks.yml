@@ -1,0 +1,59 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Converge
+  hosts: all:!localhost
+  gather_facts: no
+  become: yes
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.luks
+      luks_devices:
+        - device: /dev/vdb
+          name: luksdisk
+          # passphrase: "hhfcgrrghitubfvgtffiekfunfnncbvbkc"
+          keyfile: /etc/luksdisk.keyfile
+    - role: robertdebock.lvm
+      lvm_volume_groups:
+        - name: vg1
+          pvs:
+            - /dev/mapper/luksdisk
+      lvm_logical_volumes:
+        - name: mysql
+          vg: vg1
+          size: 4g
+        - name: html
+          vg: vg1
+          size: 32g
+    - role: robertdebock.filesystem
+      filesystem_list:
+        - dev: /dev/vg1/mysql
+          fstype: ext4
+        - dev: /dev/vg1/html
+          fstype: ext4
+    - role: robertdebock.users
+      users_create_home: no
+      users_group_list:
+        - name: mysql
+          system: yes
+      users_user_list:
+        - name: mysql
+          comment: MySQL Server
+          home: /nonexistent
+          shell: /bin/false
+          system: yes
+          group: mysql
+    - role: robertdebock.mount
+      mount_requests:
+        - path: /var/lib/mysql
+          src: /dev/vg1/mysql
+          state: mounted
+          fstype: ext4
+          owner: mysql
+          group: mysql
+          mode: "0755"
+        - path: /var/www/html
+          src: /dev/vg1/html
+          state: mounted
+          fstype: ext4
+          mode: "0755"

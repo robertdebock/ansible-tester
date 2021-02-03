@@ -7,13 +7,24 @@
 
   roles:
     - role: robertdebock.bootstrap
+    - role: robertdebock.hostname
+    - role: robertdebock.common
     - role: robertdebock.core_dependencies
-    - role: robertdebock.ca_certificates
+    - role: robertdebock.hashicorp
+      hashicorp_products:
+        - name: vault
     - role: robertdebock.vault
+      vault_show_unseal_information: yes
+      vault_listeners:
+        - name: tcp
+          address: "{{ ansible_default_ipv4.address }}:8200"
+          cluster_address: "{{ ansible_default_ipv4.address }}:8201"
+          tls_disable: "true"
+      vault_api_addr: "http://{{ ansible_default_ipv4.address }}:8200"
+      vault_cluster_addr: "https://{{ ansible_default_ipv4.address }}:8201"
       vault_unseal_keys:
-        - 5I0hxfsR4C4HPsHt6p6Ge/PbdKngycvK8mi98cPDKM7P
-        - bwCjf/5xK7Hs5ly3btAWZNsUBfDETH0sd87p6XWf9q9q
-        - 0sAmY3+KGWIp4sXf/6jANVMj2v4kdjaAc+GPiP3/5stK
-        - J4kNfe6MjhNxiiEECiWuHtxtddtxdptD3B/3fIZxUGoo
-        - T3HndUu2IwJ1Nd3+WvxiHkJJvThPUh4gbdjLhZolVW3c
-      vault_root_token: s.NiJZi7I9sedUCztD8Q7WJWxl
+        - k03oslh6lk1v6I8Jcm9mGbvQ5cYAC6m08p+inXWcv4Oi
+        - oOtFf33BOIRydZLRgXX6Y7IIM+vWCCCnwTQl2kXNrdTA
+        - V8euKxEs8nlpZMiuPiM6f+W3YrpfmwamCMi4ZVFrlwpX
+        - IU9XGTMvhMoc33nasZumA7/eXFcaSz1EBKVFRTCMYINP
+        - 9PtZAY+m75iJGMH2WT2L2mA9UvRsAVU9oi2M5p8cLhGu

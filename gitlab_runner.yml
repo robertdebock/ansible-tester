@@ -1,0 +1,19 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: prepare
+  hosts: all:!localhost
+  become: yes
+  gather_facts: no
+
+  roles:
+    - role: robertdebock.bootstrap
+    - role: robertdebock.core_dependencies
+    - role: robertdebock.buildtools
+    - role: robertdebock.epel
+    - role: robertdebock.python_pip
+    - role: robertdebock.docker
+    - role: robertdebock.gitlab_runner
+      gitlab_runner_token: "vNyT1Z5pLS7yG6FQCTds"
+      gitlab_runner_url: "https://gitlab.com/"
+      gitlab_runner_tags: "docker"
+      gitlab_runner_executor: docker
