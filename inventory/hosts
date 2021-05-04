@@ -1,4 +1,0 @@
-localhost ansible_connection=local
-# [python3]
-# debian9
-# debian10

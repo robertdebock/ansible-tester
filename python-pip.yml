@@ -4,12 +4,61 @@
   hosts: all:!localhost
   gather_facts: no
   become: yes
+  # strategy: free
+
+  pre_tasks:
+    - name: setup
+      setup:
+
+    - name: show python version
+      debug:
+        msg: "ansible_python_version: {{ ansible_python_version }}"
 
   roles:
     - role: robertdebock.bootstrap
     - role: robertdebock.alternatives
     - role: robertdebock.epel
-    - role: robertdebock.update
     - role: robertdebock.python_pip
-      python_pip_modules:
-        - name: ansible
+
+  post_tasks:
+    - name: install pip module
+      pip:
+        name: docker
+        state: present
+
+    - name: check if bootstrap still works.
+      include_role:
+        name: robertdebock.bootstrap
+
+    - name: remove pip module
+      pip:
+        name: docker
+        state: absent
+
+    - name: check if requested modules can be installed
+      include_role:
+        name: robertdebock.python_pip
+      vars:
+        python_pip_modules:
+          - name: docker
+
+    - name: check if requested modules can be removed
+      include_role:
+        name: robertdebock.python_pip
+      vars:
+        python_pip_modules:
+          - name: docker
+            state: absent
+
+    - name: check if pyOpenSSL can be installed
+      pip:
+        name: pyOpenSSL
+        state: present
+      notify:
+        - remove pyOpenSSL
+
+  handlers:
+    - name: remove pyOpenSSL
+      pip:
+        name: pyOpenSSL
+        state: absent
